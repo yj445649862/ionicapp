@@ -1,0 +1,20 @@
+page-welcome {
+  .toolbar-background {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+  .start-button{
+    position: absolute;
+    bottom: 40px;
+  }
+  .gotoIndex{
+    position: absolute;
+    top: 10px;
+    z-index: 999999;
+    right:10px;
+  }
+}

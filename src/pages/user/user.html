@@ -1,0 +1,38 @@
+<!--
+  Generated template for the UserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>用户中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content >
+  <ion-list>
+      <button ion-item (click)="navigateToAppoinment()">
+        <ion-icon name="document"></ion-icon>
+         我的预约
+      </button>
+      <button ion-item (click)="navigateToQuestions()">
+        <ion-icon name="chatbubbles"></ion-icon>
+        我的提问
+      </button>
+      <button ion-item (click)="navigateToContacts()">
+        <ion-icon name="contacts"></ion-icon>
+        家庭联系人
+      </button>
+      <button ion-item (click)="navigateToHelp()">
+        <ion-icon name="help-circle"></ion-icon>
+        帮助与反馈
+      </button>
+      <button ion-item (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+        退出登陆
+      </button>
+  </ion-list>
+
+</ion-content>

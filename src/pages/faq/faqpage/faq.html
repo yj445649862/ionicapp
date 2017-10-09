@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-title>sdfasd</ion-title>
+</ion-header>
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-list-header style="font-size:24px;">
+      <ion-icon name="document"></ion-icon>
+         预约挂号相关问题
+    </ion-list-header>
+      <ion-item *ngFor="let item of data['yuyue']" (click)="navigateToDetails(item,'yuyue')">
+         {{item.key}}
+      </ion-item>
+
+    <ion-list-header>
+      <ion-icon name="chatbubbles"></ion-icon>
+         在线问诊相关问题
+      <ion-item *ngFor="let item of data['onlineInquiry']"  (click)="navigateToDetails(item,'onlineInquiry')">
+        {{item.key}}
+      </ion-item>
+    </ion-list-header>
+    <ion-list-header>
+      <ion-icon name="chatbubbles"></ion-icon>
+         免费咨询相关问题
+      <ion-item *ngFor="let item of data['freeInquiry']" (click)="navigateToDetails(item,'freeInquiry')">
+        {{item.key}}
+      </ion-item>
+    </ion-list-header>
+  </ion-list>
+</ion-content>

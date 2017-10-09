@@ -1,22 +1,32 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { HomePage } from '../pages/home/home';
+import {Storage} from '@ionic/storage'
+import {FooterTabs} from '../pages/footer-tabs/footer-tabs.component'
+import {WelcomePage} from '../pages/welcome/welcome'
+import {DataProviders} from '../service/dataproviders'
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
-
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  rootPage:any ;
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private storage : Storage,private dataProvier:DataProviders) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.initApp();
+  }
+  initApp(){
+    this.storage.get('hasPassAds').then(res=>{
+        if(res){
+           this.rootPage = FooterTabs ;
+        }else{
+          this.rootPage = WelcomePage ;
+        }
+    })
+    this.dataProvier.loadFaqQuestions() ;
   }
 }
 
